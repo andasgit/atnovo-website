@@ -989,6 +989,8 @@ p {
 
 .alumni-card-logo {
   opacity: .8;
+  width: 48px;
+  height: 48px;
 }
 
 .quiet-grid {
