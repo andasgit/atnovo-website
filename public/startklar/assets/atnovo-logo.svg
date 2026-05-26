@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="312" height="72" viewBox="0 0 312 72" role="img" aria-labelledby="title desc">
+  <title id="title">Atnovo GmbH Logo</title>
+  <desc id="desc">Minimalistisches Atnovo Logo mit Hexagon-Netzwerk und Wortmarke.</desc>
+  <defs>
+    <linearGradient id="markGradient" x1="8" y1="10" x2="66" y2="62" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#005F70"/>
+      <stop offset=".52" stop-color="#087889"/>
+      <stop offset="1" stop-color="#8B8D5E"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <path d="M36 5.8 62.1 20.9v30.2L36 66.2 9.9 51.1V20.9L36 5.8Z" fill="url(#markGradient)" opacity=".13"/>
+    <path d="M36 6.75 61.28 21.37v29.26L36 65.25 10.72 50.63V21.37L36 6.75Z" stroke="url(#markGradient)" stroke-width="2.5"/>
+    <path d="M25.8 45.2 36 25.5l10.2 19.7M30.1 37h11.8" stroke="#071625" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="36" cy="25.5" r="3.8" fill="#005F70"/>
+    <circle cx="25.8" cy="45.2" r="3.3" fill="#087889"/>
+    <circle cx="46.2" cy="45.2" r="3.3" fill="#8B8D5E"/>
+    <text x="84" y="43" fill="#071625" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="34" font-weight="760" letter-spacing="0">Atnovo</text>
+    <text x="225" y="43" fill="#5F6B7A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="650" letter-spacing=".08em">GMBH</text>
+  </g>
+</svg>

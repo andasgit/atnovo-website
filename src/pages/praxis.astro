@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Für Praxen & Berater" description="Digitale Lösungen für Therapeuten, Coaches und Berater. Website, Terminbuchung, KI-Telefonie und mehr. atNOVO GmbH.">
+
+  <!-- Hero -->
+  <section class="relative py-24 lg:py-32 overflow-hidden bg-white dot-grid">
+    <div class="absolute inset-0 bg-gradient-to-b from-white via-white/98 to-white/90 pointer-events-none"></div>
+    <div class="absolute top-10 right-10 w-80 h-80 bg-[#00C896]/6 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
+      <div class="max-w-2xl">
+        <div class="fade-up inline-flex items-center gap-2 px-4 py-1.5 bg-[#0C1628]/6 border border-[#0C1628]/10 rounded-full mb-8">
+          <svg class="w-3.5 h-3.5 text-[#0C1628]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+          </svg>
+          <span class="text-xs font-semibold text-[#0C1628] tracking-wide">Für Therapeuten, Coaches & Berater</span>
+        </div>
+        <h1 class="fade-up delay-1 font-display text-5xl lg:text-6xl font-extrabold text-[#0C1628] leading-tight tracking-tight mb-6">
+          Deine Energie<br/>gehört deinen<br/><span class="text-[#00C896]">Klienten.</span>
+        </h1>
+        <p class="fade-up delay-2 text-lg text-[#4B5563] leading-relaxed mb-10 max-w-xl">
+          Du hast dich für deinen Beruf entschieden, weil du Menschen helfen willst — nicht um Websites zu pflegen oder Anrufe zu beantworten. Lass uns den digitalen Teil übernehmen.
+        </p>
+        <div class="fade-up delay-3 flex flex-wrap gap-4">
+          <a href="/kontakt" class="px-7 py-3.5 bg-[#0C1628] text-white font-bold rounded-full hover:bg-[#1a2d50] transition-all hover:shadow-xl text-sm">
+            Kostenlos beraten lassen →
+          </a>
+          <a href="/leistungen" class="px-7 py-3.5 bg-white text-[#0C1628] font-semibold rounded-full border border-[#E5E7EB] hover:border-[#0C1628] transition-all text-sm">
+            Alle Leistungen
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Was wir für Praxen lösen -->
+  <section class="py-20 bg-[#F7F9FC]">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="fade-up text-center mb-14">
+        <p class="text-xs font-semibold text-[#00956E] uppercase tracking-widest mb-3">Dein Alltag, vereinfacht</p>
+        <h2 class="font-display text-4xl font-bold text-[#0C1628] tracking-tight">Was wir für dich übernehmen.</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        {[
+          {
+            icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>`,
+            title: 'Online-Terminbuchung',
+            desc: 'Klienten buchen selbst über deine Website — zu jeder Zeit. Du bekommst eine automatische Bestätigung, sie eine Erinnerung. Schluss mit dem Telefonieren für Terminabsprachen.',
+          },
+          {
+            icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>`,
+            title: 'KI-Telefonie für deine Praxis',
+            desc: 'Kein verpasster Anruf mehr. Unser Voicebot nimmt Nachrichten entgegen, beantwortet häufige Fragen und informiert dich — damit du in Ruhe bei deinen Klienten sein kannst.',
+          },
+          {
+            icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03-3-9s1.343-9 3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>`,
+            title: 'Website die Vertrauen schafft',
+            desc: 'Deine Website ist oft der erste Eindruck. Wir gestalten sie professionell, warmherzig und so, dass neue Klienten genau das sehen, was sie suchen — und dich kontaktieren.',
+          },
+          {
+            icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>`,
+            title: 'Gefunden werden bei Google',
+            desc: 'Wenn Menschen in deiner Nähe nach einem Therapeuten oder Berater suchen, sollten sie dich finden. Wir sorgen mit lokaler SEO und Google Ads dafür, dass das passiert.',
+          },
+        ].map(item => (
+          <div class="fade-up card-lift bg-white rounded-2xl p-8 border border-gray-100">
+            <div class="w-11 h-11 bg-[#0C1628] rounded-xl flex items-center justify-center mb-5">
+              <svg class="w-5 h-5 text-[#00C896]" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={item.icon}></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold text-[#0C1628] mb-3">{item.title}</h3>
+            <p class="text-sm text-[#4B5563] leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Für wen genau? -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="fade-up text-center mb-12">
+        <h2 class="font-display text-4xl font-bold text-[#0C1628] tracking-tight mb-4">Für wen ist atNOVO gemacht?</h2>
+        <p class="text-[#4B5563] max-w-lg mx-auto">Wenn du Menschen hilfst, helfen wir dir — mit der Technik im Hintergrund.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+        {[
+          'Psychotherapeuten & Psychologen',
+          'Coaches & Life Coaches',
+          'Heilpraktiker',
+          'Physiotherapeuten',
+          'Berater & Consultants',
+          'Ernährungsberater',
+          'Ergotherapeuten',
+          'Logopäden',
+          'Selbstständige Trainer',
+        ].map(item => (
+          <div class="fade-up flex items-center gap-3 bg-[#F7F9FC] rounded-xl px-4 py-3 border border-gray-100">
+            <span class="text-[#00C896] font-bold">✓</span>
+            <span class="text-sm font-medium text-[#0C1628]">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Startklar-Paket Teaser -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="fade-up bg-gradient-to-br from-[#0C1628] to-[#1a3a6a] rounded-3xl p-10 lg:p-14 flex flex-col lg:flex-row items-center justify-between gap-10">
+        <div>
+          <p class="text-xs font-semibold text-[#00C896] uppercase tracking-widest mb-3">Komplett-Paket für Praxen</p>
+          <h2 class="font-display text-3xl lg:text-4xl font-bold text-white mb-4">Direkt startklar —<br/>Website, E-Mail & mehr.</h2>
+          <p class="text-[#9CA3AF] max-w-lg leading-relaxed">
+            Website, Logo, Domain, E-Mail und Online-Terminbuchung — alles zusammen, einmalig eingerichtet. Ab 690 € inkl. MwSt. Kein Technikwissen nötig.
+          </p>
+        </div>
+        <div class="flex-shrink-0 flex flex-col sm:flex-row gap-4">
+          <a href="/startklar/" class="px-7 py-3.5 bg-[#00C896] text-[#0C1628] font-bold rounded-full hover:bg-[#00b886] transition-all text-sm text-center whitespace-nowrap">
+            Paket ansehen →
+          </a>
+          <a href="/kontakt" class="px-7 py-3.5 bg-white/10 text-white font-semibold rounded-full hover:bg-white/20 transition-all text-sm text-center whitespace-nowrap border border-white/20">
+            Beratung anfragen
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-[#0C1628]">
+    <div class="max-w-3xl mx-auto px-5 lg:px-8 text-center fade-up">
+      <h2 class="font-display text-4xl font-bold text-white mb-4">Weniger Technik-Stress.<br/>Mehr Zeit für deine Klienten.</h2>
+      <p class="text-[#9CA3AF] mb-8">In einem kostenlosen Gespräch schauen wir gemeinsam, welche digitalen Lösungen dir deinen Alltag am meisten erleichtern.</p>
+      <a href="/kontakt" class="inline-flex items-center gap-2 px-8 py-4 bg-[#00C896] text-[#0C1628] font-bold rounded-full hover:bg-[#00b886] transition-all text-sm">
+        Kostenlos beraten lassen →
+      </a>
+    </div>
+  </section>
+
+</Layout>

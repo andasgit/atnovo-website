@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Über uns" description="Wer ist atNOVO GmbH? Wir sind eine digitale Agentur für E-Commerce und Praxen. Unsere Mission: Technik soll für dich arbeiten, nicht gegen dich.">
+
+  <!-- Hero -->
+  <section class="py-24 lg:py-32 bg-[#F7F9FC]">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="fade-up text-xs font-semibold text-[#00956E] uppercase tracking-widest mb-4">Über atNOVO</p>
+        <h1 class="fade-up delay-1 font-display text-5xl lg:text-6xl font-extrabold text-[#0C1628] leading-tight tracking-tight mb-6">
+          Wir glauben, dass<br/>Technik für Menschen<br/><span class="text-[#00C896]">arbeiten soll.</span>
+        </h1>
+        <p class="fade-up delay-2 text-lg text-[#4B5563] leading-relaxed max-w-2xl">
+          Nicht umgekehrt. Deshalb machen wir bei atNOVO digitale Lösungen so zugänglich, dass du dich auf das konzentrieren kannst, was wirklich zählt.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Unsere Geschichte / Mission -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div class="fade-up">
+          <p class="text-xs font-semibold text-[#00956E] uppercase tracking-widest mb-4">Unsere Mission</p>
+          <h2 class="font-display text-4xl font-bold text-[#0C1628] tracking-tight mb-6">
+            Digitale Lösungen,<br/>die den Unterschied machen.
+          </h2>
+          <div class="space-y-4 text-[#4B5563] leading-relaxed">
+            <p>
+              Viele Unternehmer und Selbstständige wissen, dass sie digital besser aufgestellt sein müssen — aber die Zeit und das Know-how fehlen. Gleichzeitig ist die digitale Welt oft überwältigend: zu viele Anbieter, zu viel Technik-Kram, zu wenig klare Ergebnisse.
+            </p>
+            <p>
+              atNOVO wurde gegründet, um das zu ändern. Wir glauben, dass gute digitale Lösungen nicht kompliziert sein müssen. Sie sollen einfach funktionieren — und dir das Leben leichter machen.
+            </p>
+            <p>
+              Deshalb reden wir nicht über Technologie, sondern über Ergebnisse. Nicht über Prozesse, sondern über das, was du am Ende des Tages gewinnst: Zeit, Kunden, Umsatz, Ruhe.
+            </p>
+          </div>
+        </div>
+        <div class="fade-up delay-2">
+          <div class="bg-[#0C1628] rounded-3xl p-10 lg:p-12">
+            <h3 class="font-display text-2xl font-bold text-white mb-8">Was uns antreibt.</h3>
+            <div class="space-y-6">
+              {[
+                { title: 'Lösungen statt Technik', desc: 'Wir zeigen dir, was du gewinnst — nicht wie es technisch funktioniert.' },
+                { title: 'Ehrlichkeit', desc: 'Kein Bullshit. Wenn etwas für dein Business keinen Sinn macht, sagen wir das.' },
+                { title: 'Langfristige Partnerschaft', desc: 'Wir bauen nicht auf und verschwinden. Wir sind dabei, wenn du uns brauchst.' },
+                { title: 'Einfachheit', desc: 'Komplexes wird bei uns einfach — für dich spürbar, nicht nur auf dem Papier.' },
+              ].map(item => (
+                <div class="flex gap-4">
+                  <span class="w-2 h-2 rounded-full bg-[#00C896] mt-2 flex-shrink-0"></span>
+                  <div>
+                    <p class="font-semibold text-white mb-1">{item.title}</p>
+                    <p class="text-sm text-[#9CA3AF] leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Was wir anders machen -->
+  <section class="py-20 bg-[#F7F9FC]">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="fade-up text-center mb-14">
+        <h2 class="font-display text-4xl font-bold text-[#0C1628] tracking-tight">Was atNOVO anders macht.</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { number: '01', title: 'Kein Technik-Kauderwelsch', desc: 'Wir sprechen deine Sprache. Keine Abkürzungen, keine Fachbegriffe — nur klare Ansagen.' },
+          { number: '02', title: 'Alles aus einer Hand', desc: 'Kein Koordinieren verschiedener Anbieter. Wir machen alles — von der Website bis zur Automatisierung.' },
+          { number: '03', title: 'Fokus auf Ergebnisse', desc: 'Was bringt es dir? Das ist die Frage, die wir immer zuerst stellen. Nicht: Was ist technisch möglich?' },
+          { number: '04', title: 'Persönlich & verlässlich', desc: 'Du hast immer einen Ansprechpartner, der dein Business kennt und dich nicht weiterschickt.' },
+        ].map(item => (
+          <div class="fade-up bg-white rounded-2xl p-7 border border-gray-100 card-lift">
+            <span class="font-display text-4xl font-bold text-[#00C896]/30 block mb-4">{item.number}</span>
+            <h3 class="font-display font-bold text-[#0C1628] mb-2">{item.title}</h3>
+            <p class="text-sm text-[#6B7280] leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-5 lg:px-8 text-center fade-up">
+      <h2 class="font-display text-4xl font-bold text-[#0C1628] mb-4">Lass uns kennenlernen.</h2>
+      <p class="text-[#4B5563] mb-8">Ein erstes Gespräch ist kostenlos und unverbindlich. Wir freuen uns darauf, dich und dein Business kennenzulernen.</p>
+      <a href="/kontakt" class="inline-flex items-center gap-2 px-8 py-4 bg-[#0C1628] text-white font-bold rounded-full hover:bg-[#1a2d50] transition-all hover:shadow-xl text-sm">
+        Jetzt Kontakt aufnehmen →
+      </a>
+    </div>
+  </section>
+
+</Layout>
