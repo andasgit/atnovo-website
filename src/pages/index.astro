@@ -65,6 +65,97 @@ import Layout from '../layouts/Layout.astro';
       0%   { transform: translateY(-100%); }
       100% { transform: translateY(250%); }
     }
+
+    /* Service tile hover animation */
+    .service-tile {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      aspect-ratio: 4/3;
+    }
+    .tile-bg {
+      position: absolute;
+      inset: 0;
+      transition: transform 600ms ease;
+    }
+    .service-tile:hover .tile-bg {
+      transform: scale(1.05);
+    }
+    .tile-default {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 24px;
+      text-align: center;
+      transition: opacity 300ms ease;
+    }
+    .service-tile:hover .tile-default {
+      opacity: 0;
+    }
+    .tile-icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tile-label {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.01em;
+    }
+    .tile-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(5, 18, 32, 0.92);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 400ms ease, visibility 400ms ease;
+    }
+    .service-tile:hover .tile-overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+    .tile-hover-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 22px 24px;
+      transform: translateY(18px);
+      opacity: 0;
+      visibility: hidden;
+      transition: transform 650ms ease, opacity 650ms ease, visibility 650ms ease;
+    }
+    .service-tile:hover .tile-hover-content {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+    .tile-hover-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+    .tile-hover-desc {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.55;
+    }
+    .tile-accent {
+      width: 28px;
+      height: 2px;
+      background: #087889;
+      margin-bottom: 10px;
+    }
   </style>
 
   <!-- POSITIONING — Was wir aufbauen -->
@@ -147,7 +238,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- SERVICES OVERVIEW -->
-  <section class="py-24 bg-white">
+  <section class="py-24 bg-[#F7F9FC]">
     <div class="max-w-7xl mx-auto px-5 lg:px-8">
       <div class="fade-up text-center mb-14">
         <p class="text-xs font-semibold text-[#087889] uppercase tracking-widest mb-3">Was wir tun</p>
@@ -155,106 +246,178 @@ import Layout from '../layouts/Layout.astro';
         <p class="text-[#4B5563] max-w-xl mx-auto">Kein Wirrwarr aus verschiedenen Anbietern. Wir kümmern uns um alles — von der ersten Idee bis zum laufenden Betrieb.</p>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
-        <!-- Service 1: Chatbot -->
-        <div class="fade-up card-lift bg-[#F7F9FC] rounded-2xl p-7 border border-transparent hover:border-[#087889]/20 transition-colors" id="chatbot">
-          <div class="w-10 h-10 bg-[#087889]/15 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-[#087889]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-            </svg>
+        <!-- Tile 1: KI-Assistent -->
+        <div class="fade-up service-tile" id="chatbot">
+          <div class="tile-bg" style="background: #0C1628;"></div>
+          <div class="tile-default">
+            <div class="tile-icon-wrap">
+              <svg class="w-6 h-6 text-[#087889]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+              </svg>
+            </div>
+            <span class="tile-label">KI-Assistent</span>
           </div>
-          <h3 class="font-display font-bold text-[#0C1628] mb-2">KI-Assistent</h3>
-          <p class="text-sm text-[#6B7280] leading-relaxed">Dein digitaler Mitarbeiter, der rund um die Uhr Fragen beantwortet, Leads sammelt und Kunden betreut.</p>
+          <div class="tile-overlay"></div>
+          <div class="tile-hover-content">
+            <div class="tile-accent"></div>
+            <div class="tile-hover-title">KI-Assistent</div>
+            <div class="tile-hover-desc">Dein digitaler Mitarbeiter, der rund um die Uhr Fragen beantwortet, Leads sammelt und Kunden betreut.</div>
+          </div>
         </div>
 
-        <!-- Service 2: Telefonie -->
-        <div class="fade-up delay-1 card-lift bg-[#F7F9FC] rounded-2xl p-7 border border-transparent hover:border-[#087889]/20 transition-colors" id="telefonie">
-          <div class="w-10 h-10 bg-[#087889]/15 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-[#087889]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-            </svg>
+        <!-- Tile 2: KI-Telefonie -->
+        <div class="fade-up delay-1 service-tile" id="telefonie">
+          <div class="tile-bg" style="background: #0D2B2B;"></div>
+          <div class="tile-default">
+            <div class="tile-icon-wrap">
+              <svg class="w-6 h-6 text-[#087889]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+            </div>
+            <span class="tile-label">KI-Telefonie</span>
           </div>
-          <h3 class="font-display font-bold text-[#0C1628] mb-2">KI-Telefonie</h3>
-          <p class="text-sm text-[#6B7280] leading-relaxed">Dein Telefon nimmt automatisch an — freundlich, kompetent, rund um die Uhr. Voicebot-Technologie, die beeindruckt.</p>
+          <div class="tile-overlay"></div>
+          <div class="tile-hover-content">
+            <div class="tile-accent"></div>
+            <div class="tile-hover-title">KI-Telefonie</div>
+            <div class="tile-hover-desc">Dein Telefon nimmt automatisch an — freundlich, kompetent, rund um die Uhr. Voicebot-Technologie, die beeindruckt.</div>
+          </div>
         </div>
 
-        <!-- Service 3: E-Mail -->
-        <div class="fade-up delay-2 card-lift bg-[#F7F9FC] rounded-2xl p-7 border border-transparent hover:border-[#087889]/20 transition-colors">
-          <div class="w-10 h-10 bg-[#087889]/15 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-[#087889]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
+        <!-- Tile 3: E-Mail -->
+        <div class="fade-up delay-2 service-tile">
+          <div class="tile-bg" style="background: #18181B;"></div>
+          <div class="tile-default">
+            <div class="tile-icon-wrap">
+              <svg class="w-6 h-6 text-[#087889]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <span class="tile-label">Professionelle E-Mail</span>
           </div>
-          <h3 class="font-display font-bold text-[#0C1628] mb-2">Professionelle E-Mail</h3>
-          <p class="text-sm text-[#6B7280] leading-relaxed">Deine eigene Unternehmens-E-Mail-Adresse — seriös, zuverlässig und komplett eingerichtet.</p>
+          <div class="tile-overlay"></div>
+          <div class="tile-hover-content">
+            <div class="tile-accent"></div>
+            <div class="tile-hover-title">Professionelle E-Mail</div>
+            <div class="tile-hover-desc">Deine eigene Unternehmens-E-Mail-Adresse — seriös, zuverlässig und komplett eingerichtet.</div>
+          </div>
         </div>
 
-        <!-- Service 4: Terminplanung -->
-        <div class="fade-up card-lift bg-[#F7F9FC] rounded-2xl p-7 border border-transparent hover:border-[#087889]/20 transition-colors" id="termine">
-          <div class="w-10 h-10 bg-[#087889]/15 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-[#087889]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-            </svg>
+        <!-- Tile 4: Terminbuchung -->
+        <div class="fade-up service-tile" id="termine">
+          <div class="tile-bg" style="background: #0F1F30;"></div>
+          <div class="tile-default">
+            <div class="tile-icon-wrap">
+              <svg class="w-6 h-6 text-[#087889]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <span class="tile-label">Online-Terminbuchung</span>
           </div>
-          <h3 class="font-display font-bold text-[#0C1628] mb-2">Online-Terminbuchung</h3>
-          <p class="text-sm text-[#6B7280] leading-relaxed">Kunden buchen selbst — tag und nacht. Kein Telefonieren, keine Doppelbuchungen, keine verpassten Anfragen.</p>
+          <div class="tile-overlay"></div>
+          <div class="tile-hover-content">
+            <div class="tile-accent"></div>
+            <div class="tile-hover-title">Online-Terminbuchung</div>
+            <div class="tile-hover-desc">Kunden buchen selbst — tag und nacht. Kein Telefonieren, keine Doppelbuchungen, keine verpassten Anfragen.</div>
+          </div>
         </div>
 
-        <!-- Service 5: Website -->
-        <div class="fade-up delay-1 card-lift bg-[#0C1628] rounded-2xl p-7 border border-transparent" id="website">
-          <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-[#087889]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
-            </svg>
+        <!-- Tile 5: Website -->
+        <div class="fade-up delay-1 service-tile" id="website">
+          <div class="tile-bg" style="background: #071625;"></div>
+          <div class="tile-default">
+            <div class="tile-icon-wrap">
+              <svg class="w-6 h-6 text-[#087889]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+              </svg>
+            </div>
+            <span class="tile-label">Website-Erstellung</span>
           </div>
-          <h3 class="font-display font-bold text-white mb-2">Website-Erstellung</h3>
-          <p class="text-sm text-[#9CA3AF] leading-relaxed">Dein professionelles digitales Zuhause — modern, schnell und so gebaut, dass Google dich findet.</p>
+          <div class="tile-overlay"></div>
+          <div class="tile-hover-content">
+            <div class="tile-accent"></div>
+            <div class="tile-hover-title">Website-Erstellung</div>
+            <div class="tile-hover-desc">Dein professionelles digitales Zuhause — modern, schnell und so gebaut, dass Google dich findet.</div>
+          </div>
         </div>
 
-        <!-- Service 6: Online Marketing -->
-        <div class="fade-up delay-2 card-lift bg-[#F7F9FC] rounded-2xl p-7 border border-transparent hover:border-[#087889]/20 transition-colors" id="marketing">
-          <div class="w-10 h-10 bg-[#087889]/15 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-[#087889]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/>
-            </svg>
+        <!-- Tile 6: Online Marketing -->
+        <div class="fade-up delay-2 service-tile" id="marketing">
+          <div class="tile-bg" style="background: #0C1628;"></div>
+          <div class="tile-default">
+            <div class="tile-icon-wrap">
+              <svg class="w-6 h-6 text-[#087889]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/>
+              </svg>
+            </div>
+            <span class="tile-label">Online Marketing</span>
           </div>
-          <h3 class="font-display font-bold text-[#0C1628] mb-2">Online Marketing</h3>
-          <p class="text-sm text-[#6B7280] leading-relaxed">Damit dich die richtigen Menschen finden. Wir sorgen dafür, dass deine Zielgruppe auf dich aufmerksam wird.</p>
+          <div class="tile-overlay"></div>
+          <div class="tile-hover-content">
+            <div class="tile-accent"></div>
+            <div class="tile-hover-title">Online Marketing</div>
+            <div class="tile-hover-desc">Damit dich die richtigen Menschen finden. Wir sorgen dafür, dass deine Zielgruppe auf dich aufmerksam wird.</div>
+          </div>
         </div>
 
-        <!-- Service 7: Social Media -->
-        <div class="fade-up card-lift bg-[#F7F9FC] rounded-2xl p-7 border border-transparent hover:border-[#087889]/20 transition-colors">
-          <div class="w-10 h-10 bg-[#087889]/15 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-[#087889]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/>
-            </svg>
+        <!-- Tile 7: Social Media -->
+        <div class="fade-up service-tile">
+          <div class="tile-bg" style="background: #0D2B2B;"></div>
+          <div class="tile-default">
+            <div class="tile-icon-wrap">
+              <svg class="w-6 h-6 text-[#087889]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/>
+              </svg>
+            </div>
+            <span class="tile-label">Social Media</span>
           </div>
-          <h3 class="font-display font-bold text-[#0C1628] mb-2">Social Media</h3>
-          <p class="text-sm text-[#6B7280] leading-relaxed">Deine Präsenz auf Instagram, LinkedIn & Co. — ohne dass du selbst täglich posten musst. Social Media Agentur, die liefert.</p>
+          <div class="tile-overlay"></div>
+          <div class="tile-hover-content">
+            <div class="tile-accent"></div>
+            <div class="tile-hover-title">Social Media</div>
+            <div class="tile-hover-desc">Deine Präsenz auf Instagram, LinkedIn & Co. — ohne dass du selbst täglich posten musst. Wir liefern.</div>
+          </div>
         </div>
 
-        <!-- Service 8: Google Ads -->
-        <div class="fade-up delay-1 card-lift bg-[#F7F9FC] rounded-2xl p-7 border border-transparent hover:border-[#087889]/20 transition-colors">
-          <div class="w-10 h-10 bg-[#087889]/15 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-[#087889]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-            </svg>
+        <!-- Tile 8: Google Ads -->
+        <div class="fade-up delay-1 service-tile">
+          <div class="tile-bg" style="background: #18181B;"></div>
+          <div class="tile-default">
+            <div class="tile-icon-wrap">
+              <svg class="w-6 h-6 text-[#087889]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <span class="tile-label">Google Ads (SEA)</span>
           </div>
-          <h3 class="font-display font-bold text-[#0C1628] mb-2">Google Ads (SEA)</h3>
-          <p class="text-sm text-[#6B7280] leading-relaxed">Sofort auf Seite 1 bei Google — genau dann, wenn deine Kunden suchen. Kein Streuverlust, maximale Wirkung.</p>
+          <div class="tile-overlay"></div>
+          <div class="tile-hover-content">
+            <div class="tile-accent"></div>
+            <div class="tile-hover-title">Google Ads (SEA)</div>
+            <div class="tile-hover-desc">Sofort auf Seite 1 bei Google — genau dann, wenn deine Kunden suchen. Kein Streuverlust, maximale Wirkung.</div>
+          </div>
         </div>
 
-        <!-- Service 9: SEO -->
-        <div class="fade-up delay-2 card-lift bg-[#087889] rounded-2xl p-7" id="seo">
-          <div class="w-10 h-10 bg-[#0C1628]/15 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-5 h-5 text-[#0C1628]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-            </svg>
+        <!-- Tile 9: SEO -->
+        <div class="fade-up delay-2 service-tile" id="seo">
+          <div class="tile-bg" style="background: #087889;"></div>
+          <div class="tile-default">
+            <div class="tile-icon-wrap" style="background: rgba(0,0,0,0.15);">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+            </div>
+            <span class="tile-label">SEO-Agentur</span>
           </div>
-          <h3 class="font-display font-bold text-[#0C1628] mb-2">SEO-Agentur</h3>
-          <p class="text-sm text-[#0C1628]/70 leading-relaxed">Langfristig bei Google gefunden werden — ohne jeden Monat fürs Klicken zu bezahlen. Nachhaltige Sichtbarkeit.</p>
+          <div class="tile-overlay"></div>
+          <div class="tile-hover-content">
+            <div class="tile-accent"></div>
+            <div class="tile-hover-title">SEO-Agentur</div>
+            <div class="tile-hover-desc">Langfristig bei Google gefunden werden — ohne jeden Monat fürs Klicken zu bezahlen. Nachhaltige Sichtbarkeit.</div>
+          </div>
         </div>
 
       </div>
