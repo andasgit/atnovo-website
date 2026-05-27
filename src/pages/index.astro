@@ -67,52 +67,81 @@ import Layout from '../layouts/Layout.astro';
     }
   </style>
 
-  <!-- ZIELGRUPPEN TEASER -->
+  <!-- POSITIONING — Was wir aufbauen -->
   <section class="bg-[#F7F9FC] py-24">
     <div class="max-w-7xl mx-auto px-5 lg:px-8">
       <div class="fade-up text-center mb-14">
-        <p class="text-xs font-semibold text-[#087889] uppercase tracking-widest mb-3">Für wen sind wir da?</p>
-        <h2 class="font-display text-4xl lg:text-5xl font-bold text-[#0C1628] tracking-tight">Zwei Welten. Eine Lösung.</h2>
+        <p class="text-xs font-semibold text-[#087889] uppercase tracking-widest mb-3">Was wir aufbauen</p>
+        <h2 class="font-display text-4xl lg:text-5xl font-bold text-[#0C1628] tracking-tight mb-4">Digital. Strategisch. Wirkungsvoll.</h2>
+        <p class="text-[#4B5563] max-w-lg mx-auto">Von der ersten Idee bis zur fertigen Lösung — wir begleiten dich über den gesamten Weg.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-6">
-        <!-- E-Commerce Card -->
-        <a href="/ecommerce" class="card-lift group relative bg-white rounded-3xl p-8 lg:p-10 border border-gray-100 overflow-hidden block">
-          <div class="absolute top-0 right-0 w-48 h-48 bg-[#087889]/6 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-          <div class="relative">
-            <div class="w-12 h-12 bg-[#0C1628] rounded-2xl flex items-center justify-center mb-6">
-              <svg class="w-6 h-6 text-[#087889]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-              </svg>
-            </div>
-            <h3 class="font-display text-2xl font-bold text-[#0C1628] mb-3">Für E-Commerce</h3>
-            <p class="text-[#4B5563] leading-relaxed mb-6">
-              Mehr Umsatz, weniger manuelle Arbeit. Wir automatisieren deinen Kundenservice, optimieren deinen Shop für Google und sorgen dafür, dass Bestellungen und Anfragen wie am Schnürchen laufen.
-            </p>
-            <span class="inline-flex items-center gap-2 text-sm font-semibold text-[#0C1628] group-hover:text-[#087889] transition-colors">
-              Mehr erfahren →
-            </span>
-          </div>
-        </a>
+      <div class="grid sm:grid-cols-2 gap-6">
 
-        <!-- Praxis Card -->
-        <a href="/praxis" class="card-lift group relative bg-[#0C1628] rounded-3xl p-8 lg:p-10 overflow-hidden block">
-          <div class="absolute bottom-0 left-0 w-64 h-64 bg-[#087889]/8 rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+        <!-- 01 KI & Automatisierung — dark highlight -->
+        <div class="fade-up card-lift relative bg-[#0C1628] rounded-3xl p-8 lg:p-10 overflow-hidden">
+          <div class="absolute top-0 right-0 w-56 h-56 bg-[#087889]/10 rounded-full -translate-y-1/3 translate-x-1/3 pointer-events-none"></div>
           <div class="relative">
-            <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
+            <span class="text-[#087889]/50 font-display text-5xl font-bold block mb-4 leading-none">01</span>
+            <div class="w-12 h-12 bg-[#087889]/15 rounded-2xl flex items-center justify-center mb-5">
               <svg class="w-6 h-6 text-[#087889]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/>
               </svg>
             </div>
-            <h3 class="font-display text-2xl font-bold text-white mb-3">Für Praxen & Berater</h3>
-            <p class="text-[#9CA3AF] leading-relaxed mb-6">
-              Deine Energie gehört deinen Klienten — nicht der Technik. Wir richten deine digitale Präsenz ein, automatisieren Terminbuchungen und sorgen dafür, dass neue Klienten dich finden.
-            </p>
-            <span class="inline-flex items-center gap-2 text-sm font-semibold text-[#087889]">
-              Mehr erfahren →
-            </span>
+            <p class="text-xs font-semibold text-[#087889] uppercase tracking-widest mb-2">Für alles einsetzbar</p>
+            <h3 class="font-display text-2xl font-bold text-white mb-3">KI & Automatisierung</h3>
+            <p class="text-[#9CA3AF] leading-relaxed text-sm">Chatbots, Voicebots, Prozessautomatisierung — wir bringen KI dorthin, wo sie deinen Alltag wirklich leichter macht. Nicht als Spielerei, sondern als echtes Werkzeug.</p>
           </div>
-        </a>
+        </div>
+
+        <!-- 02 Strategie & Markenbildung — light -->
+        <div class="fade-up delay-1 card-lift relative bg-white rounded-3xl p-8 lg:p-10 border border-gray-100 overflow-hidden">
+          <div class="absolute bottom-0 right-0 w-40 h-40 bg-[#087889]/5 rounded-full translate-y-1/3 translate-x-1/3 pointer-events-none"></div>
+          <div class="relative">
+            <span class="text-[#0C1628]/10 font-display text-5xl font-bold block mb-4 leading-none">02</span>
+            <div class="w-12 h-12 bg-[#087889]/10 rounded-2xl flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-[#087889]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+              </svg>
+            </div>
+            <p class="text-xs font-semibold text-[#087889] uppercase tracking-widest mb-2">Die Grundlage für alles</p>
+            <h3 class="font-display text-2xl font-bold text-[#0C1628] mb-3">Strategie & Markenbildung</h3>
+            <p class="text-[#4B5563] leading-relaxed text-sm">Wer bist du, was bietest du, wen willst du erreichen? Wir schärfen deine Positionierung, entwickeln deine Marke und sorgen dafür, dass alles zusammenpasst — bevor es nach außen geht.</p>
+          </div>
+        </div>
+
+        <!-- 03 App & Software-Entwicklung — light -->
+        <div class="fade-up card-lift relative bg-white rounded-3xl p-8 lg:p-10 border border-gray-100 overflow-hidden">
+          <div class="absolute top-0 left-0 w-40 h-40 bg-[#087889]/5 rounded-full -translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
+          <div class="relative">
+            <span class="text-[#0C1628]/10 font-display text-5xl font-bold block mb-4 leading-none">03</span>
+            <div class="w-12 h-12 bg-[#087889]/10 rounded-2xl flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-[#087889]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+              </svg>
+            </div>
+            <p class="text-xs font-semibold text-[#087889] uppercase tracking-widest mb-2">Deine Idee, unser Code</p>
+            <h3 class="font-display text-2xl font-bold text-[#0C1628] mb-3">App & Software-Entwicklung</h3>
+            <p class="text-[#4B5563] leading-relaxed text-sm">Ob Web-App, Mobile-App oder individuelles Tool — wir bauen, was du brauchst. Modern, skalierbar und so, dass du es selbst in der Hand hast.</p>
+          </div>
+        </div>
+
+        <!-- 04 Digitale Beratung — teal -->
+        <div class="fade-up delay-1 card-lift relative bg-[#087889] rounded-3xl p-8 lg:p-10 overflow-hidden">
+          <div class="absolute bottom-0 left-0 w-56 h-56 bg-white/5 rounded-full translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
+          <div class="relative">
+            <span class="text-[#0C1628]/20 font-display text-5xl font-bold block mb-4 leading-none">04</span>
+            <div class="w-12 h-12 bg-[#0C1628]/15 rounded-2xl flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-[#0C1628]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+              </svg>
+            </div>
+            <p class="text-xs font-semibold text-[#0C1628]/60 uppercase tracking-widest mb-2">Klarheit statt Verwirrung</p>
+            <h3 class="font-display text-2xl font-bold text-[#0C1628] mb-3">Digitale Beratung</h3>
+            <p class="text-[#0C1628]/70 leading-relaxed text-sm">Du weißt, dass du digital besser aufgestellt sein musst — aber nicht wie. Wir analysieren, priorisieren und begleiten dich mit einem klaren Plan. Ohne Berater-Sprache, ohne Overhead.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
