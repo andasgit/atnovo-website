@@ -18,10 +18,21 @@ import Layout from '../layouts/Layout.astro';
 
     <!-- Background slideshow -->
     <div class="hero-slides" aria-hidden="true">
-      <div class="hero-slide slide-tile"></div>
+      <div class="hero-slide slide-tile active"></div>
       <div class="hero-slide slide-1"></div>
       <div class="hero-slide slide-2"></div>
       <div class="hero-slide slide-3"></div>
+    </div>
+
+    <!-- Vorhang-Streifen für Slide-Übergänge -->
+    <div class="hero-curtain" aria-hidden="true">
+      <div class="curtain-strip"></div>
+      <div class="curtain-strip"></div>
+      <div class="curtain-strip"></div>
+      <div class="curtain-strip"></div>
+      <div class="curtain-strip"></div>
+      <div class="curtain-strip"></div>
+      <div class="curtain-strip"></div>
     </div>
 
     <!-- Layered overlays: subtle top vignette + heavy bottom gradient -->
@@ -77,44 +88,52 @@ import Layout from '../layouts/Layout.astro';
     }
 
     /* Hero background slideshow */
-    .hero-slides {
-      position: absolute;
-      inset: 0;
-    }
+    .hero-slides { position: absolute; inset: 0; }
     .hero-slide {
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background-size: cover;
       background-position: center;
       opacity: 0;
+      transition: opacity 0.3s ease;
     }
-    .slide-tile {
-      background-image: url('/assets/slide-tile.jpg');
-      animation: heroFade 20s ease-in-out infinite;
-      animation-delay: 0s;
+    .hero-slide.active { opacity: 1; }
+    .slide-tile { background-image: url('/assets/slide-tile.jpg'); }
+    .slide-1    { background-image: url('/assets/slide-1.jpg'); }
+    .slide-2    { background-image: url('/assets/slide-2.jpg'); }
+    .slide-3    { background-image: url('/assets/slide-3.jpg'); }
+
+    /* Vorhang-Streifen für Slide-Übergang (curtain-1 Stil) */
+    .hero-curtain {
+      position: absolute; inset: 0;
+      z-index: 10;
+      display: flex;
+      pointer-events: none;
+      overflow: hidden;
     }
-    .slide-1 {
-      background-image: url('/assets/slide-1.jpg');
-      animation: heroFade 20s ease-in-out infinite;
-      animation-delay: 5s;
+    .curtain-strip {
+      flex: 1;
+      height: 100%;
+      background: #071625;
+      transform: translateY(-100%);
+      transition: transform 0.45s cubic-bezier(0.77, 0, 0.175, 1);
     }
-    .slide-2 {
-      background-image: url('/assets/slide-2.jpg');
-      animation: heroFade 20s ease-in-out infinite;
-      animation-delay: 10s;
-    }
-    .slide-3 {
-      background-image: url('/assets/slide-3.jpg');
-      animation: heroFade 20s ease-in-out infinite;
-      animation-delay: 15s;
-    }
-    @keyframes heroFade {
-      0%   { opacity: 0; }
-      4%   { opacity: 1; }
-      24%  { opacity: 1; }
-      29%  { opacity: 0; }
-      100% { opacity: 0; }
-    }
+    .curtain-strip:nth-child(1) { transition-delay: 0.00s; }
+    .curtain-strip:nth-child(2) { transition-delay: 0.04s; }
+    .curtain-strip:nth-child(3) { transition-delay: 0.08s; }
+    .curtain-strip:nth-child(4) { transition-delay: 0.12s; }
+    .curtain-strip:nth-child(5) { transition-delay: 0.16s; }
+    .curtain-strip:nth-child(6) { transition-delay: 0.20s; }
+    .curtain-strip:nth-child(7) { transition-delay: 0.24s; }
+    .hero-curtain.covering .curtain-strip { transform: translateY(0); }
+    .hero-curtain.revealing .curtain-strip { transform: translateY(100%); }
+    .hero-curtain.revealing .curtain-strip:nth-child(1) { transition-delay: 0.24s; }
+    .hero-curtain.revealing .curtain-strip:nth-child(2) { transition-delay: 0.20s; }
+    .hero-curtain.revealing .curtain-strip:nth-child(3) { transition-delay: 0.16s; }
+    .hero-curtain.revealing .curtain-strip:nth-child(4) { transition-delay: 0.12s; }
+    .hero-curtain.revealing .curtain-strip:nth-child(5) { transition-delay: 0.08s; }
+    .hero-curtain.revealing .curtain-strip:nth-child(6) { transition-delay: 0.04s; }
+    .hero-curtain.revealing .curtain-strip:nth-child(7) { transition-delay: 0.00s; }
+    .hero-curtain.no-transition .curtain-strip { transition: none !important; }
 
     /* Hero diagonal panel wipe */
     .hero-panels {
@@ -555,5 +574,40 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
+
+  <script>
+    (function() {
+      const slides = document.querySelectorAll('.hero-slide');
+      const curtain = document.querySelector('.hero-curtain');
+      let current = 0;
+
+      function nextSlide() {
+        // Streifen fahren von oben runter (decken ab)
+        curtain.classList.add('covering');
+
+        setTimeout(function() {
+          // Hinter dem Vorhang: Slide wechseln
+          slides[current].classList.remove('active');
+          current = (current + 1) % slides.length;
+          slides[current].classList.add('active');
+
+          // Streifen fahren nach unten weg (entdecken)
+          curtain.classList.remove('covering');
+          curtain.classList.add('revealing');
+
+          // Nach Ende der Enthüllung: Streifen sofort zurück nach oben (unsichtbar)
+          setTimeout(function() {
+            curtain.classList.add('no-transition');
+            curtain.classList.remove('revealing');
+            curtain.offsetHeight; // reflow erzwingen
+            curtain.classList.remove('no-transition');
+          }, 800);
+
+        }, 750);
+      }
+
+      setInterval(nextSlide, 6000);
+    })();
+  </script>
 
 </Layout>
