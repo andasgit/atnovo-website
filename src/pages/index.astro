@@ -16,12 +16,12 @@ import Layout from '../layouts/Layout.astro';
       <div class="hero-panel"></div>
     </div>
 
-    <!-- Background image -->
-    <img
-      src="/assets/atnovo-hero-people.png"
-      alt="Atnovo Beratung"
-      class="absolute inset-0 w-full h-full object-cover object-center"
-    />
+    <!-- Background slideshow -->
+    <div class="hero-slides" aria-hidden="true">
+      <div class="hero-slide slide-1"></div>
+      <div class="hero-slide slide-2"></div>
+      <div class="hero-slide slide-3"></div>
+    </div>
 
     <!-- Layered overlays: subtle top vignette + heavy bottom gradient -->
     <div class="absolute inset-0 bg-gradient-to-t from-[#071625]/92 via-[#071625]/40 to-[#071625]/10 pointer-events-none"></div>
@@ -73,6 +73,41 @@ import Layout from '../layouts/Layout.astro';
     @keyframes scrollline {
       0%   { transform: translateY(-100%); }
       100% { transform: translateY(250%); }
+    }
+
+    /* Hero background slideshow */
+    .hero-slides {
+      position: absolute;
+      inset: 0;
+    }
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+    }
+    .slide-1 {
+      background-image: url('/assets/slide-1.jpg');
+      animation: heroFade 15s ease-in-out infinite;
+      animation-delay: 0s;
+    }
+    .slide-2 {
+      background-image: url('/assets/slide-2.jpg');
+      animation: heroFade 15s ease-in-out infinite;
+      animation-delay: 5s;
+    }
+    .slide-3 {
+      background-image: url('/assets/slide-3.jpg');
+      animation: heroFade 15s ease-in-out infinite;
+      animation-delay: 10s;
+    }
+    @keyframes heroFade {
+      0%   { opacity: 0; }
+      5%   { opacity: 1; }
+      30%  { opacity: 1; }
+      35%  { opacity: 0; }
+      100% { opacity: 0; }
     }
 
     /* Hero diagonal panel wipe */
