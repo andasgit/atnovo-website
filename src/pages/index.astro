@@ -18,6 +18,7 @@ import Layout from '../layouts/Layout.astro';
 
     <!-- Background slideshow -->
     <div class="hero-slides" aria-hidden="true">
+      <div class="hero-slide slide-tile"></div>
       <div class="hero-slide slide-1"></div>
       <div class="hero-slide slide-2"></div>
       <div class="hero-slide slide-3"></div>
@@ -87,26 +88,31 @@ import Layout from '../layouts/Layout.astro';
       background-position: center;
       opacity: 0;
     }
+    .slide-tile {
+      background-image: url('/assets/slide-tile.jpg');
+      animation: heroFade 20s ease-in-out infinite;
+      animation-delay: 0s;
+    }
     .slide-1 {
       background-image: url('/assets/slide-1.jpg');
-      animation: heroFade 15s ease-in-out infinite;
-      animation-delay: 0s;
+      animation: heroFade 20s ease-in-out infinite;
+      animation-delay: 5s;
     }
     .slide-2 {
       background-image: url('/assets/slide-2.jpg');
-      animation: heroFade 15s ease-in-out infinite;
-      animation-delay: 5s;
+      animation: heroFade 20s ease-in-out infinite;
+      animation-delay: 10s;
     }
     .slide-3 {
       background-image: url('/assets/slide-3.jpg');
-      animation: heroFade 15s ease-in-out infinite;
-      animation-delay: 10s;
+      animation: heroFade 20s ease-in-out infinite;
+      animation-delay: 15s;
     }
     @keyframes heroFade {
       0%   { opacity: 0; }
-      5%   { opacity: 1; }
-      30%  { opacity: 1; }
-      35%  { opacity: 0; }
+      4%   { opacity: 1; }
+      24%  { opacity: 1; }
+      29%  { opacity: 0; }
       100% { opacity: 0; }
     }
 
