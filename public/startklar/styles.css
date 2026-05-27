@@ -339,7 +339,7 @@ p {
   position: relative;
   padding: calc(var(--header-height) + 60px) 0 40px;
   background: linear-gradient(180deg, #b8dff5 0%, #d6eefa 40%, #eef7fd 75%, #f5fbff 100%);
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* Wolken */
@@ -358,25 +358,25 @@ p {
   background: #fff;
   border-radius: 50%;
 }
-.cloud-1 { width: 220px; height: 55px; top: 55%; left: 2%; animation-delay: 0s; }
-.cloud-1::before { width: 90px; height: 90px; top: -44px; left: 28px; }
-.cloud-1::after  { width: 65px; height: 65px; top: -32px; left: 100px; }
+.cloud-1 { width: 240px; height: 58px; top: 82%; left: 2%; animation-delay: 0s; z-index: 3; }
+.cloud-1::before { width: 96px; height: 96px; top: -48px; left: 28px; }
+.cloud-1::after  { width: 70px; height: 70px; top: -35px; left: 110px; }
 
-.cloud-2 { width: 160px; height: 42px; top: 68%; left: 52%; animation-delay: 1.4s; opacity: 0.65; }
-.cloud-2::before { width: 70px; height: 70px; top: -36px; left: 20px; }
-.cloud-2::after  { width: 50px; height: 50px; top: -26px; left: 78px; }
+.cloud-2 { width: 170px; height: 44px; top: 90%; left: 50%; animation-delay: 1.4s; opacity: 0.7; z-index: 3; }
+.cloud-2::before { width: 72px; height: 72px; top: -38px; left: 20px; }
+.cloud-2::after  { width: 52px; height: 52px; top: -28px; left: 84px; }
 
-.cloud-3 { width: 300px; height: 68px; top: 60%; right: 2%; animation-delay: 2.8s; opacity: 0.72; }
-.cloud-3::before { width: 120px; height: 120px; top: -62px; left: 35px; }
-.cloud-3::after  { width: 88px;  height: 88px;  top: -46px; left: 148px; }
+.cloud-3 { width: 320px; height: 72px; top: 78%; right: 1%; animation-delay: 2.8s; opacity: 0.78; z-index: 3; }
+.cloud-3::before { width: 128px; height: 128px; top: -66px; left: 38px; }
+.cloud-3::after  { width: 92px;  height: 92px;  top: -48px; left: 158px; }
 
-.cloud-4 { width: 140px; height: 38px; top: 75%; left: 28%; animation-delay: 0.7s; opacity: 0.55; }
-.cloud-4::before { width: 58px; height: 58px; top: -30px; left: 16px; }
-.cloud-4::after  { width: 42px; height: 42px; top: -22px; left: 70px; }
+.cloud-4 { width: 150px; height: 40px; top: 95%; left: 26%; animation-delay: 0.7s; opacity: 0.6; z-index: 3; }
+.cloud-4::before { width: 62px; height: 62px; top: -32px; left: 18px; }
+.cloud-4::after  { width: 44px; height: 44px; top: -22px; left: 74px; }
 
-.cloud-5 { width: 200px; height: 50px; top: 50%; left: 20%; animation-delay: 3.5s; opacity: 0.45; }
-.cloud-5::before { width: 82px; height: 82px; top: -42px; left: 24px; }
-.cloud-5::after  { width: 60px; height: 60px; top: -32px; left: 100px; }
+.cloud-5 { width: 210px; height: 52px; top: 86%; left: 18%; animation-delay: 3.5s; opacity: 0.5; z-index: 3; }
+.cloud-5::before { width: 86px; height: 86px; top: -44px; left: 26px; }
+.cloud-5::after  { width: 62px; height: 62px; top: -34px; left: 106px; }
 
 @keyframes cloudFloat {
   0%, 100% { transform: translateY(0px); }
