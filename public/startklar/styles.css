@@ -358,7 +358,7 @@ p {
   background: #fff;
   border-radius: 50%;
 }
-.cloud-1 { width: 240px; height: 58px; top: 82%; left: 2%; animation-delay: 0s; z-index: 3; }
+.cloud-1 { width: 240px; height: 58px; top: 10%; left: 3%; animation-delay: 0s; z-index: 1; }
 .cloud-1::before { width: 96px; height: 96px; top: -48px; left: 28px; }
 .cloud-1::after  { width: 70px; height: 70px; top: -35px; left: 110px; }
 
@@ -374,7 +374,7 @@ p {
 .cloud-4::before { width: 62px; height: 62px; top: -32px; left: 18px; }
 .cloud-4::after  { width: 44px; height: 44px; top: -22px; left: 74px; }
 
-.cloud-5 { width: 210px; height: 52px; top: 86%; left: 18%; animation-delay: 3.5s; opacity: 0.5; z-index: 3; }
+.cloud-5 { width: 210px; height: 52px; top: 108%; left: 12%; animation-delay: 3.5s; opacity: 0.5; z-index: 3; }
 .cloud-5::before { width: 86px; height: 86px; top: -44px; left: 26px; }
 .cloud-5::after  { width: 62px; height: 62px; top: -34px; left: 106px; }
 
