@@ -383,7 +383,7 @@ p {
 .cloud-6::after  { width: 56px; height: 56px; top: -30px; left: 96px; }
 
 @media (max-width: 768px) {
-  .cloud-1 { left: -140px; }
+  .cloud { display: none; }
 }
 
 @keyframes cloudFloat {
