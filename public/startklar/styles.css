@@ -1777,3 +1777,31 @@ legend {
   border-left: 3px solid var(--teal);
   padding-left: .9rem;
 }
+
+/* Hero trust badges */
+.hero-trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-top: 1.1rem;
+}
+.trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: .32rem;
+  padding: .28rem .7rem;
+  border-radius: 999px;
+  background: rgba(8, 120, 137, .09);
+  color: var(--teal);
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+/* Preiskontrast-Notiz */
+.price-agency-note {
+  margin-top: .55rem;
+  font-size: .76rem;
+  color: var(--quiet);
+  font-style: italic;
+}
