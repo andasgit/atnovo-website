@@ -1057,9 +1057,11 @@ p {
 }
 
 section.quiet {
-  border-block: 1px solid var(--line-soft);
-  background: linear-gradient(180deg, rgba(255, 255, 255, .74), rgba(246, 250, 249, .9));
+  position: relative;
+  border-block: none;
+  background: linear-gradient(180deg, #f5fbff 0%, #ffffff 100%);
   color: var(--ink);
+  overflow: visible;
 }
 
 section.quiet h2 {
@@ -1101,27 +1103,47 @@ section.process .process-list p {
 }
 
 section.quiet .section-kicker {
-  color: #B6AFEA;
+  color: var(--teal);
 }
 
 section.quiet .signal-item {
-  background: rgba(255, 255, 255, .07);
-  border-color: rgba(255, 255, 255, .1);
-  box-shadow: none;
+  background: #fff;
+  border-color: rgba(8, 120, 137, .14);
+  box-shadow: 0 2px 16px rgba(8, 120, 137, .07);
 }
 
 section.quiet .signal-item strong {
-  color: #fff;
+  color: var(--ink);
 }
 
 section.quiet .signal-item p {
-  color: rgba(255, 255, 255, .7);
+  color: var(--muted);
 }
 
 section.quiet .signal-icon {
-  background: rgba(255, 255, 255, .1);
-  color: rgba(255, 255, 255, .85);
+  background: rgba(8, 120, 137, .08);
+  color: var(--teal);
 }
+
+.cloud-q1 {
+  width: 220px; height: 56px;
+  top: 12%; left: -40px;
+  animation-delay: 0.6s;
+  opacity: 0.55;
+  z-index: 3;
+}
+.cloud-q1::before { width: 90px; height: 90px; top: -48px; left: 28px; }
+.cloud-q1::after  { width: 64px; height: 64px; top: -34px; left: 112px; }
+
+.cloud-q2 {
+  width: 170px; height: 44px;
+  top: 60%; right: 6%;
+  animation-delay: 2.4s;
+  opacity: 0.45;
+  z-index: 3;
+}
+.cloud-q2::before { width: 72px; height: 72px; top: -38px; left: 20px; }
+.cloud-q2::after  { width: 52px; height: 52px; top: -26px; left: 88px; }
 
 .signal-grid {
   display: grid;
