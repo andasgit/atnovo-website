@@ -1057,6 +1057,20 @@ p {
 }
 
 section.quiet {
+  border-block: 1px solid var(--line-soft);
+  background: linear-gradient(180deg, rgba(255, 255, 255, .74), rgba(246, 250, 249, .9));
+  color: var(--ink);
+}
+
+section.quiet h2 {
+  color: var(--ink);
+}
+
+section.quiet p:not(.section-kicker) {
+  color: var(--muted);
+}
+
+section.process {
   border-block: none;
   background:
     radial-gradient(circle at 86% 22%, rgba(8, 120, 137, .34), transparent 36%),
@@ -1064,12 +1078,26 @@ section.quiet {
   color: #fff;
 }
 
-section.quiet h2 {
+section.process .section-heading h2,
+section.process .section-heading p {
   color: #fff;
 }
 
-section.quiet p:not(.section-kicker) {
-  color: rgba(255, 255, 255, .76);
+section.process .section-kicker {
+  color: rgba(255, 255, 255, .6);
+}
+
+section.process .process-list li {
+  background: rgba(255, 255, 255, .07);
+  border-color: rgba(255, 255, 255, .12);
+}
+
+section.process .process-list h3 {
+  color: #fff;
+}
+
+section.process .process-list p {
+  color: rgba(255, 255, 255, .72);
 }
 
 section.quiet .section-kicker {
