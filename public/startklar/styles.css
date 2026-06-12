@@ -464,17 +464,19 @@ p {
   height: auto;
   max-height: 360px;
   object-fit: contain;
-  filter: drop-shadow(0 20px 30px rgba(15, 23, 42, .05));
+  filter: drop-shadow(0 20px 40px rgba(15, 23, 42, .08));
+  mask-image: radial-gradient(ellipse 78% 82% at 50% 42%, black 38%, rgba(0,0,0,.6) 60%, transparent 82%);
+  -webkit-mask-image: radial-gradient(ellipse 78% 82% at 50% 42%, black 38%, rgba(0,0,0,.6) 60%, transparent 82%);
 }
 
 .hero-glow-element {
   position: absolute;
   z-index: 1;
-  width: 300px;
-  height: 300px;
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(219, 234, 254, .7) 0%, rgba(243, 232, 255, .5) 50%, transparent 100%);
-  filter: blur(40px);
+  background: radial-gradient(circle, rgba(204, 230, 255, .85) 0%, rgba(219, 234, 254, .6) 40%, rgba(243, 232, 255, .3) 70%, transparent 100%);
+  filter: blur(55px);
 }
 
 .launch-console {
