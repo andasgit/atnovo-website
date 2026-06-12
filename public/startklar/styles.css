@@ -1850,6 +1850,13 @@ legend {
   letter-spacing: .02em;
 }
 
+.price-net-note {
+  margin: .2rem 0 .5rem;
+  font-size: .74rem;
+  color: var(--muted);
+  opacity: .75;
+}
+
 /* Preiskontrast-Notiz */
 .price-agency-note {
   margin-top: .55rem;
