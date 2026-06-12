@@ -17,7 +17,7 @@
   --shadow-soft: 0 10px 30px rgba(3, 2, 19, .055);
   --radius: 12px;
   --max: 1120px;
-  --header-height: 76px;
+  --header-height: 96px;
   --ease: cubic-bezier(.16, 1, .3, 1);
   font-family: Inter, "SF Pro Display", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
 }
@@ -156,7 +156,7 @@ button {
 .brand-logo {
   width: 280px;
   height: auto;
-  max-height: 80px;
+  max-height: none;
   object-fit: contain;
   object-position: left center;
 }
